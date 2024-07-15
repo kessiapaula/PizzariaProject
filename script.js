@@ -150,11 +150,12 @@ const cartItems = cart.map((item) => {
         `${item.name} /Qtd: ${item.quantity} /Price: €${item.price.toFixed(2)} |`
     )
 }).join("")
-    
-const message = encodeURIComponent(cartItems)
+
+const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2)
+const message = encodeURIComponent(`${cartItems} Total: €${totalPrice} Address: ${addressInput.value}`)
 const phone = "+351917757439"
 
-window.open(`https://wa.me/${phone}?text=${message} Address: ${addressInput.value}`, "_blank")
+window.open(`https://wa.me/${phone}?text=${message}`, "_blank")
 
 cart.length = 0
 updateCartModal()
