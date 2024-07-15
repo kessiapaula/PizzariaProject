@@ -71,7 +71,8 @@ function addToCart(name, price) {
 //Update cart
 function updateCartModal() {
     cartItemContainer.innerHTML = "";
-    let total = 0;
+    let total = 0
+    let totalItems = 0
 
     cart.forEach(item => {
         const cartItemElement = document.createElement("div")
@@ -92,12 +93,13 @@ function updateCartModal() {
             </div>
         `
         total += item.price * item.quantity
+        totalItems += item.quantity
 
         cartItemContainer.appendChild(cartItemElement)
     })
     cartTotal.textContent = `€ ${total.toFixed(2)}`
 
-    cartCounter.innerHTML = cart.length
+    cartCounter.textContent = totalItems
 }
 
 //Remove item
