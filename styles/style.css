@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: white;
+}
+
+.animate__animated.animate__bounce {
+    --animate-duration: 10s;
+  }
