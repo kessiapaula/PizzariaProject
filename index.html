@@ -205,16 +205,15 @@
         </div>
     </div>
     <!--MODAL CART-->
-    <div class="bg-black/50 w-full h-full fixed overflow-y-auto top-0 left-0 z-[99] hidden items-center justify-center" id="cart-modal">
+    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center overflow-y-auto" id="cart-modal">
         <div class="bg-white p-5 rounded-md min-w-[50%] md:min-w-[600px]">
             <h2 class="text-center font-bold text-2xl mb-2">My Cart</h2>
-            <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
-            <p class="font-bold mt-4">Total: <span id="cart-total">0.00</span></p>
-
+            <div id="cart-items-container" class="overflow-y-auto max-h-[60vh]">
+                <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+            </div>
+            <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
             <p class="font-bold mt-4">Delivery Address:</p>
-            <input type="text" placeholder="Enter your address here..." id="address"
-                class="w-full border-2 p-1 rounded my-1" />
-
+            <input type="text" placeholder="Enter your address here..." id="address" class="w-full border-2 p-1 rounded my-1" />
             <p id="address-warn" class="text-red-700 hidden">Enter your full address!</p>
             <div class="flex items-center justify-between mt-4 w-full">
                 <button id="close-modal-btn">Close</button>
@@ -222,7 +221,7 @@
             </div>
         </div>
     </div>
-
+    
     <footer class=" bg-black/50 w-full flex justify-center items-center fixed bottom-0 z-40 text-white">
         <button id="cart-btn" class=" bg-emerald-600 rounded-md p-1">
             (<span id="cart-count">0</span>)
